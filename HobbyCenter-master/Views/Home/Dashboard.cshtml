@@ -1,0 +1,31 @@
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+@model List<Hobby> 
+    
+<h1> Hobbies </h1>
+
+<TABLE BORDER=2 FRAME=BOX RULES=ALL> 
+    <thead>
+        <th>Name of Hobby</th>
+
+        <th>Enthusiasts</th>
+    </thead>
+    <tbody>
+        @foreach(Hobby hobby in Model){
+            <tr>
+                <td> <a href="/Details/@hobby.HobbyId"> @hobby.Name </a></td>
+                <td>@hobby.HobbyLiker.Count</td>
+                    @if(ViewBag.Id == @hobby.HobbyOwner.UserId)
+                {
+                    <td> <a href="/deletehobby/hobby.HobbyId">| Delete |</a></td>
+                }
+            </tr>
+        }
+    </tbody>
+</Table>
+
+<div class="button">
+    <a asp-action="New" type="button">Create a Hobby</a>
+</div>

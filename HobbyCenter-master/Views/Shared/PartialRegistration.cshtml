@@ -1,0 +1,33 @@
+@model User
+        <span asp-validation-for="FirstName"></span>
+        <span asp-validation-for="LastName"></span>
+        <span asp-validation-for="UserName"></span>
+        <span asp-validation-for="Password"></span>
+        <span asp-validation-for="ConfPass"></span>
+
+<form asp-action="Register" asp-controller="Home" method="POST">
+
+        <h3>Register</h3> 
+        <hr>
+    
+        <h4>First Name:</h4>
+        <input class="Form-Control" asp-for="FirstName"><br>
+
+    
+        <h4>Last Name:</h4>
+        <input class="Form-Control" asp-for="LastName"><br>
+
+            
+        <h4>UserName:</h4>
+        <input class="Form-Control" asp-for="UserName"><br>
+
+    
+        <h4>Password:</h4>
+        <input class="Form-Control" asp-for="Password"><br>
+
+    
+        <h4>Confirm Password:</h4>
+        <input class="Form-Control" asp-for="ConfPass"><br>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
